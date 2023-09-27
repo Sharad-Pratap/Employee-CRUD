@@ -1,0 +1,515 @@
+:root{
+    --lagoon: #0295A9;
+    --yello:#FDD037;
+    --offwhite:#FBFBFB;
+}
+*{
+    margin:0;
+    padding:0;
+}
+
+html{
+    font-size:62.5%;
+    font-family: 'Raleway', sans-serif;
+    font-weight:600;
+}
+body{
+    background-color: var(--offwhite);
+} 
+/*---------------------------------------------------------HEADER--------------------------------------------------------*/
+header{
+    background-color: var(--lagoon);
+    width:100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: black 1px solid;
+   
+}
+.top{
+    width: 80%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0rem 1rem 0rem;
+    
+}
+/*----------------------------------------------------MENU HAMBURGUER---------------------------------------------------*/
+.panel ul{
+    width: 14.9rem;
+    display:flex;
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+}
+
+.panel ul li {
+    margin: 3rem 0rem 2rem 0rem;
+}
+
+.panel nav ul li a:hover{
+    font-weight: bolder;
+}
+
+.panel ul li figure img{
+    width:6rem;
+    border-radius: 50%;
+    border: solid 3px var(--lagoon);
+}
+
+.panel p{
+    margin:1rem;
+    text-decoration: underline;
+}
+
+.menu-link{
+    display: none;
+}
+
+/*------------------------------------------------------LOGO------------------------------------------------------------*/
+.logo{
+    font-size:3.8rem;
+    font-weight: bolder;
+}
+/*-----------------------------------------------------------------------------------------------------*/
+.top nav ul{
+    list-style: none;
+    display:flex;
+    align-items: center; 
+}
+
+.top nav ul li a{
+    text-decoration: none;
+    list-style: none;
+    font-weight: bold;
+    margin: 0rem 2rem 0rem 2rem;
+    font-size: 1.8rem;
+    color:black;
+    
+}
+.top nav ul li a:hover{
+    font-weight: bolder;
+}
+
+/*-------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------Profile-------------------------------------------------------*/
+.profile{
+    display:flex;
+    align-items: center;
+    font-size: 1.5rem;
+    
+}
+
+.profile a{
+    font-size: 2.5rem;
+    color:black;
+    text-decoration: none;
+}
+
+.profile figure img{
+    width:6.4rem;
+    border-radius: 5rem;
+    margin-right:2rem;
+}
+/*----------------------------------------------------MAIN----------------------------------------------------------*/
+
+.main-top{
+    background-color: var(--lagoon);
+    padding-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height:20rem;
+    flex-direction: row-reverse;
+}
+
+main h2{
+    font-size: 2.5rem;
+    margin:11%;
+}
+/*---------------------------------------------------------------------------------------------*/
+.main-top button{
+    width:21.6rem;
+    height:5rem;
+    font-size:1.8rem;
+    border-radius:1rem;
+    background-color: var(--yello);
+    border:var(--offwhite) solid 1px;
+    margin-right:10%;
+    font-family:'Raleway', sans-serif;
+}
+
+.main-top button:hover{
+    opacity:0.8;
+}
+
+.main-top button a{
+    font-weight: bold;
+    color: var(--offwhite);
+    text-decoration: none;
+}
+.main-top button a:hover{
+    color:white;
+}
+
+/*--------------------------------------------------------------------------------------------------*/
+
+.mylist{
+    margin:-4rem 0rem 0rem 0rem;
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    align-items: center;
+}
+
+/*-----------------------------------------------------CARDS----------------------------------------------------------*/
+.card{
+    display:flex;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 1rem;
+    margin-bottom: 5rem;
+    width: 80%;
+    height: 13rem;
+    border: solid 1px var(--offwhite);
+    box-shadow: rgb(226, 226, 226) 2px 2px 3px 2px;
+}
+
+.card div{
+    display:flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: center;
+    margin: 0rem 4rem 0rem 4rem;
+    flex: 1;
+}
+
+.card img{
+    width:5rem;
+    height:auto;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+}
+
+.card label{
+    color:var(--yello);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.id{
+    margin:2rem 0rem 0rem 2rem;
+    position: relative;
+}
+
+.card p{
+    font-size: 2rem;
+
+}
+.card button{
+    margin-top:1rem;
+    border:none;
+    background-color: transparent;
+}
+
+.card button:hover{
+    opacity: 0.8;
+}
+
+.card button figure img{
+    height:3rem;
+    display: flex;
+    cursor: pointer;
+}
+
+/*----------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------*/
+.addEmployee h2{
+    margin-bottom: 4rem;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.addEmployee p{
+    margin:0;
+}
+
+.addEmployee div{
+    display:flex;
+    margin: 0% 10% 0% 10%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.addEmployee figure img{
+    width: 78rem;
+    height: 52rem;
+}
+.pictureEmp{
+    height: 50px;
+}
+
+.addEmployee form{
+    width:48rem;
+    height:60rem;
+    background-color: white;
+    border-radius:1rem;
+    border: solid 1px var(--offwhite);
+    box-shadow: rgb(226, 226, 226) 2px 2px 3px 2px;
+    display:flex;
+    flex-direction: column;
+}
+
+.addEmployee form label {
+    font-size: 1.8rem; /* Reduced font size for better fit */
+    color: var(--yello);
+    margin: 1rem 0rem 0rem 2rem; /* Adjusted margins for better spacing */
+  }
+
+.addEmployee form input {
+    width: 90%; /* Make the input fields occupy the full width of the container */
+    padding: 8px;
+    margin-bottom: 15px; /* Increased margin for better separation */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 40px; /* Adjust the height as needed */
+    font-family: 'Raleway', sans-serif;
+    margin: 1rem 0rem 1rem 1rem;
+  }
+.addEmployee form input[type=file]::-webkit-file-upload-button {
+    border:1px solid black;
+    width: 50%;
+    height: fit-content;
+    margin-top: 0;
+    padding: 10px;
+    -webkit-appearance: none;
+    border: none;
+    border:0px;
+    
+}
+
+
+ x::-webkit-file-upload-button, input[type=file]:after {
+    content:'Browse...';
+    left: 100%;
+    margin-left:3px;
+    position: relative;
+    -webkit-appearance: button;
+    padding: 0px 4px 2px 2px;
+    border:0px;
+}
+
+
+.add-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+form .add-button button{
+    width:16rem;
+    height:5rem;
+    margin: 0rem 1rem 0rem 1rem;
+    border-radius: 1rem;
+    margin-top:6rem;
+    font-size: 1.8rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+.btn-resister{
+    border:none;
+    color:var(--offwhite);
+    background-color: var(--lagoon);
+}
+
+.btn-resister:hover{
+    opacity: 0.8;
+    color:white;
+    background-color:rgb(237, 224, 43);
+}
+
+.btn-resister-cancel{
+    background-color: white;
+    color:var(--lagoon);
+    border:var(--lagoon) solid 1px;
+}
+
+.btn-resister-cancel:hover{
+    opacity: 0.8;
+    color:var(--yello);
+    border: var(--yello) solid 1px;
+}
+
+  
+/*--------------------------------------------------------------FOOTER--------------------------------------------------------*/
+footer{
+    display:flex;
+    background-color: var(--lagoon);
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15rem;
+}
+
+footer figure{
+    align-self:flex-end;
+}
+
+footer figure a img{
+    width:5rem;
+}
+
+footer .contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    margin:2rem;
+    width:100%;
+}
+
+footer .contact .social-media{
+    margin:2rem;
+}
+
+.social-media a img{
+    margin: 0rem 2rem 0rem 2rem;
+    width:2.5rem;
+}
+
+footer .footer-info{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    margin: 0rem 4rem 2rem 4rem;
+    font-size:1.5rem;
+    font-weight: normal;
+}
+
+/*---------------------------------------------------------------MEDIA QUERIES---------------------------------------------------------*/
+@media (max-width:1262px){
+    main{
+        font-size:50%;
+    }
+}
+
+@media (max-width:1060px){
+    main{
+        font-size:40%;
+    }
+}
+
+@media (max-width:880px){
+    html{
+        font-size:35%;
+    }
+}
+
+@media (max-width:768px){
+    main{
+        font-size:30%;
+    }
+}
+
+@media (max-width:650px){
+    main{
+        font-size:25%;
+    }
+}
+
+@media (max-width:562px){
+    main{
+        font-size:30%;
+    }
+
+    .menu, .profile{
+        display:none;
+    }
+
+    main h2{
+        margin-left: 15%;
+    }
+
+    .main-top button{
+        margin-right:15%;
+    }
+
+    .top nav ul li a {
+        margin:0;
+        font-size: 1.6rem;
+    }
+
+  
+
+    .top, .card{
+        width: 74%;
+    }
+
+    .addEmployee figure img{
+        width:50rem;
+        height: auto;
+    }
+
+    .card{
+        height:18rem;
+    }
+
+    .addEmployee div{
+        flex-direction: column;
+    }
+
+    .addEmployee form{
+        width:50rem;
+        height:50rem;
+        margin-bottom: 10rem;
+    }
+    .addEmployee form input{
+        padding: 5px;
+    }
+
+    #add-button{
+        flex-direction: row;
+    }
+
+    #anexar{
+        flex-direction: row;
+    }
+
+    .menu-link{
+        font-size: 5rem;
+        text-decoration: none;
+        color:black;
+        display: block;
+    }
+
+}
+
+@media (max-width:450px){
+    .card{
+        height: 40rem;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .div-button{
+        align-self: flex-end;
+        position: relative;
+        top: -28rem;
+        height: 40px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
