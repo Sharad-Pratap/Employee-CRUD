@@ -11,25 +11,59 @@ export default function CreateUser() {
   const [email, setEmail] = useState();
   const navigate = useNavigate();
 
+  // const Submit = (e) => {
+  //   e.preventDefault();
+  //   const formData = new FormData(); // Create a new FormData object
+  //   formData.append('photo', selectedFile); // Use 'photo' as the field name
+  //   formData.append('name', name);
+  //   formData.append('title', title);
+  //   formData.append('phone', phone);
+  //   formData.append('email', email);
+    
+  //   axios
+  //     .post("http://localhost:3001/createUser",formData)
+  //     .then((result) => {
+  //       console.log(result);
+  //       navigate("/");
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
   const Submit = (e) => {
     e.preventDefault();
+  
+    const formData = new FormData();
+    
+    // Get the file input element
+    const fileInput = document.getElementById('photo');
+  
+    // Check if a file is selected
+    if (fileInput && fileInput.files.length > 0) {
+      // Get the selected file
+      const selectedFile = fileInput.files[0];
+  
+      // Append the selected file to formData
+      formData.append('photo', selectedFile);
+    }
+  
+    formData.append('name', name);
+    formData.append('title', title);
+    formData.append('phone', phone);
+    formData.append('email', email);
+  
     axios
-      .post("http://localhost:3001/createUser", {
-        photoURL,
-        name,
-        title,
-        phone,
-        email,
-      })
+      .post("http://localhost:3001/createUser", formData)
       .then((result) => {
         console.log(result);
-        setPhotoURL(null);
         navigate("/");
       })
       .catch((err) => {
         console.log(err);
       });
   };
+  
+  
 
   const handleFileSelect = (event) => {
     const selectedFile = event.target.files[0]; // Get the first selected file
@@ -49,7 +83,7 @@ export default function CreateUser() {
         <h2>Add Employee</h2>
 
         <div>
-          <form onSubmit={Submit}>
+          <form onSubmit={Submit} encType="multipart/form-data">
             <label for="photo">Photo of Employee</label>
             <input
               type="file"

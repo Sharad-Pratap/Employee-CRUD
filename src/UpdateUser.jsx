@@ -8,6 +8,7 @@ export default function UpdateUser() {
   const [title, setTitle] = useState()
   const [phone, setPhone] = useState()
   const [email, setEmail] = useState()
+
   const navigate = useNavigate()
 
   useEffect(()=>{
@@ -24,23 +25,29 @@ export default function UpdateUser() {
     })
   },[id])
 
-  const handleFileSelect =(event)=> {
-    const selectedFile = event.target.files[0]; // Get the first selected file
-    if (selectedFile) {
-      const fileURL = URL.createObjectURL(selectedFile);
-      setPhotoURL(fileURL);
-    }
-  }
+  const handleFileSelect = (event) => {
+    // console.log(event.target.files[0]);
+    const selectedFile = event.target.files[0];
+    setPhotoURL(selectedFile); // Update the state with the selected file
+  };
 
-  const Update = (e)=>{
+
+  const Update = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:3001/updateUser/${id}`, {photoURL,name,title,phone,email})
+    const formData = new FormData();
+    formData.append('photo', photoURL);
+    formData.append('name', name);
+    formData.append('title', title);
+    formData.append('phone', phone);
+    formData.append('email', email);
+    axios.put(`http://localhost:3001/updateUser/${id}`, formData)
     .then((result)=>{
       console.log(result)
       navigate('/');
     })
     .catch((err)=>{console.log(err)})
-  }
+
+  };
 
   return (
     <>
@@ -48,7 +55,7 @@ export default function UpdateUser() {
     <h2>Update Employee</h2>
 
     <div>
-      <form onSubmit={Update}>
+      <form onSubmit={Update} encType="multipart/form-data">
         <label for="photo" >Photo of Employee</label>
         <input type="file" id="photo" name="photo" accept="image/*" className='pictureEmp'
         onChange={handleFileSelect}/>

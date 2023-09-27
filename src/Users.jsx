@@ -4,35 +4,39 @@ import $ from "jquery"; // Import jQuery
 import "bigslide"; // Import the bigSlide plugin
 import { Link } from "react-router-dom";
 import axios from "axios";
+
+
 export default function Users() {
   useEffect(() => {
     // Initialize bigSlide() when the component is mounted
     $(".menu-link").bigSlide();
   }, []); // The empty dependency array ensures this code runs only once after the initial render
 
-  
   const [users, setUsers] = useState([]);
 
-  useEffect(()=>{
-    axios.get("http://localhost:3001")
-    .then((result)=>{
+  
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001")
+      .then((result) => {
         setUsers(result.data);
-    })
-    .catch((err)=>{
+      })
+      .catch((err) => {
         console.log(err);
-    })
-  })
+      });
+  });
 
-  const handleDelete = (id) =>{
-    axios.delete('http://localhost:3001/deleteUser/'+id)
-    .then((res)=>{
-        console.log(res)
-    })
-    .catch((err)=>{
-        console.log(err)
-    })
-
-  }
+  const handleDelete = (id) => {
+    axios
+      .delete("http://localhost:3001/deleteUser/" + id)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <>
       <header>
@@ -99,9 +103,7 @@ export default function Users() {
         </div>
       </header>
 
-      
-      
-      <Link to='/create' className="main-top" >
+      <Link to="/create" className="main-top">
         <button>
           <a href="#resisterbook">
             <span
@@ -117,72 +119,76 @@ export default function Users() {
             Add Employee
           </a>
         </button>
-        
-        </Link>
-      
-      
+      </Link>
+
       <main>
-      <section class="mylist" id="mylist">
-  {users.map((user, index) => (
-    <div class="card" key={index}>
-      <div>
-        <label class="id">{index + 1}</label>
-        <img src={user.photoURL}  alt="Employee" />
-        
-      </div>
+        <section class="mylist" id="mylist">
+          {users.map((user, index) => (
+            <div class="card" key={index}>
+              <div>
+                <label class="id">{index + 1}</label>
+                <img src={`http://localhost:3001/uploads/${user.photoURL}`} alt="Employee" />
+              </div>
 
-      <div>
-        <label for="title">Name</label>
-        <p name="title">{user.name}</p>
-      </div>
+              <div>
+                <label for="title">Name</label>
+                <p name="title">{user.name}</p>
+              </div>
 
-      <div>
-        <label for="status">Title</label>
-        <p name="status">{user.title}</p>
-      </div>
+              <div>
+                <label for="status">Title</label>
+                <p name="status">{user.title}</p>
+              </div>
 
-      <div>
-        <label for="status">Phone</label>
-        <p name="status">{user.phone}</p>
-      </div>
+              <div>
+                <label for="status">Phone</label>
+                <p name="status">{user.phone}</p>
+              </div>
 
-      <div>
-        <label for="status">Email</label>
-        <p name="status">{user.email}</p>
-      </div>
+              <div>
+                <label for="status">Email</label>
+                <p name="status">{user.email}</p>
+              </div>
 
-      <div class="div-button">
-        <button>
-          <figure>
-            <img src="assets/icons8-delete.svg" alt="delete" onClick={(e)=>handleDelete(user._id)} />
-          </figure>
-        </button>
-        <Link to={`/update/${user._id}`}>
-        <button>
-          <figure>
-          <img src="assets/icons8-edit.svg" alt="edit"/>
-          </figure>
-        </button> 
-        </Link>
-      </div>
-    </div>
-  ))}
-</section>
-
+              <div class="div-button">
+                <button>
+                  <figure>
+                    <img
+                      src="assets/icons8-delete.svg"
+                      alt="delete"
+                      onClick={(e) => handleDelete(user._id)}
+                    />
+                  </figure>
+                </button>
+                <Link to={`/update/${user._id}`}>
+                  <button>
+                    <figure>
+                      <img src="assets/icons8-edit.svg" alt="edit" />
+                    </figure>
+                  </button>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </section>
       </main>
       <footer>
         <div class="contact" id="contact">
-            <p>Contact us</p>
+          <p>Contact us</p>
 
-            <div class="social-media">
-                
-                <a href="#"><img src="assets/icons8-linked-in.svg" alt="linkedin"/></a>
-                <a href="#"><img src="assets/icons8-facebook.svg" alt="linkedin"/></a>
-                <a href="#"><img src="assets/icons8-twitter.svg" alt="linkedin"/></a>
-               
-            </div>
+          <div class="social-media">
+            <a href="#">
+              <img src="assets/icons8-linked-in.svg" alt="linkedin" />
+            </a>
+            <a href="#">
+              <img src="assets/icons8-facebook.svg" alt="linkedin" />
+            </a>
+            <a href="#">
+              <img src="assets/icons8-twitter.svg" alt="linkedin" />
+            </a>
+          </div>
         </div>
-    </footer>
+      </footer>
     </>
   );
 }
