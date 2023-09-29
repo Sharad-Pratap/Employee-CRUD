@@ -163,6 +163,8 @@ main h2{
     align-items: center;
 }
 
+
+
 /*-----------------------------------------------------CARDS----------------------------------------------------------*/
 .card{
     display:flex;
@@ -214,7 +216,8 @@ main h2{
 }
 
 .card button:hover{
-    opacity: 0.8;
+    color: red;
+    opacity: 0.8;  
 }
 
 .card button figure img{

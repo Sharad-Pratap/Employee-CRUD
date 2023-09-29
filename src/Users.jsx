@@ -18,7 +18,7 @@ export default function Users() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001")
+      .get("https://crud-backend-1usd.onrender.com/")
       .then((result) => {
         setUsers(result.data);
       })
@@ -29,7 +29,7 @@ export default function Users() {
 
   const handleDelete = (id) => {
     axios
-      .delete("http://localhost:3001/deleteUser/" + id)
+      .delete("https://crud-backend-1usd.onrender.com/deleteUser/" + id)
       .then((res) => {
         console.log(res);
       })
@@ -64,10 +64,10 @@ export default function Users() {
             </figure>
             <div>
               <p>
-                <a href="#">Sharad</a>
+                <a href="/">Sharad</a>
               </p>
               <p>
-                <a href="#">Pratap</a>
+                <a href="/">Pratap</a>
               </p>
             </div>
           </div>
@@ -95,7 +95,7 @@ export default function Users() {
                   <a href="#contact">Contact</a>
                 </li>
                 <li>
-                  <a href="#">Exit</a>
+                  <a href="/">Exit</a>
                 </li>
               </ul>
             </nav>
@@ -110,7 +110,7 @@ export default function Users() {
               style={{
                 fontSize: "2rem",
                 fontFamily: "sans-serif",
-                textDecoration: "None",
+                textDecoration: "none",
                 fontWeight: "normal",
               }}
             >
@@ -127,7 +127,7 @@ export default function Users() {
             <div class="card" key={index}>
               <div>
                 <label class="id">{index + 1}</label>
-                <img src={`http://localhost:3001/uploads/${user.photoURL}`} alt="Employee" />
+                <img src={`https://crud-backend-1usd.onrender.com/${user.photoURL}`} alt="Employee" />
               </div>
 
               <div>
@@ -177,14 +177,14 @@ export default function Users() {
           <p>Contact us</p>
 
           <div class="social-media">
-            <a href="#">
+            <a href="https://www.linkedin.com/in/sharad-pratap-singh-094864203/">
               <img src="assets/icons8-linked-in.svg" alt="linkedin" />
             </a>
-            <a href="#">
-              <img src="assets/icons8-facebook.svg" alt="linkedin" />
+            <a href="https://github.com/Sharad-Pratap">
+              <img src="assets/icons8-github.svg" alt="github" />
             </a>
-            <a href="#">
-              <img src="assets/icons8-twitter.svg" alt="linkedin" />
+            <a href="https://sharad-pratap.github.io/">
+              <img src="assets/icons8-portfolio-30.png" alt="linkedin" />
             </a>
           </div>
         </div>

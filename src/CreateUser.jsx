@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -53,7 +53,7 @@ export default function CreateUser() {
     formData.append('email', email);
   
     axios
-      .post("http://localhost:3001/createUser", formData)
+      .post("https://crud-backend-1usd.onrender.com/createUser", formData)
       .then((result) => {
         console.log(result);
         navigate("/");
@@ -76,6 +76,10 @@ export default function CreateUser() {
       setPhotoURL(fileURL);
     }
   };
+
+  const handleCancel = () =>{
+    navigate('/');
+  }
 
   return (
     <>
@@ -139,7 +143,7 @@ export default function CreateUser() {
               <button type="submit" class="btn-resister">
                 Add
               </button>
-              <button class="btn-resister-cancel">Cancel</button>
+              <button class="btn-resister-cancel" onClick={handleCancel}>Cancel</button>
             </div>
           </form>
         </div>

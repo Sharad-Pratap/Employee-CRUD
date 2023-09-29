@@ -12,7 +12,7 @@ export default function UpdateUser() {
   const navigate = useNavigate()
 
   useEffect(()=>{
-    axios.get("http://localhost:3001/getUser/"+id)
+    axios.get("https://crud-backend-1usd.onrender.com/getUser/"+id)
     .then((result)=>{
         setPhotoURL(result.data.photoURL)
         setName(result.data.name)
@@ -40,7 +40,7 @@ export default function UpdateUser() {
     formData.append('title', title);
     formData.append('phone', phone);
     formData.append('email', email);
-    axios.put(`http://localhost:3001/updateUser/${id}`, formData)
+    axios.put(`https://crud-backend-1usd.onrender.com/updateUser/${id}`, formData)
     .then((result)=>{
       console.log(result)
       navigate('/');
@@ -48,6 +48,10 @@ export default function UpdateUser() {
     .catch((err)=>{console.log(err)})
 
   };
+
+  const handleCancel = ()=>{
+    navigate('/');
+  }
 
   return (
     <>
@@ -78,7 +82,7 @@ export default function UpdateUser() {
 
         <div class="add-button" id="add-button">
           <button type="submit" class="btn-resister">Update</button>
-          <button class="btn-resister-cancel">Cancel</button>
+          <button class="btn-resister-cancel" onClick={handleCancel}>Cancel</button>
         </div>
       </form>
     </div>
